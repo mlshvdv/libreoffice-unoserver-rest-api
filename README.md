@@ -1,4 +1,4 @@
-# libreoffice-unoserver
+# libreoffice-unoserver with REST API
 
 The LibreOffice with unoserver on Docker
 
@@ -18,9 +18,9 @@ libreofficedocker/libreoffice-unoserver:nightly
 
 ### REST API
 
-This image do not shipped with REST API for unoserver by default.
+This image shipped with REST API for unoserver by default.
 
-Please use https://github.com/libreoffice-docker/unoserver-rest-api.
+How to use: https://github.com/libreoffice-docker/unoserver-rest-api.
 
 ### Environment Variables
 

@@ -78,14 +78,13 @@ ENTRYPOINT ["/init"]
 
 # Uncomment the following line to
 # Enable REST API for unoserver
-# ARG UNOSERVER_REST_API_VERSION=v0.5.0
-# ADD https://github.com/libreoffice-docker/unoserver-rest-api/releases/download/v${UNOSERVER_REST_API_VERSION}/s6-overlay-module.tar.zx /tmp
-# ADD https://github.com/libreoffice-docker/unoserver-rest-api/releases/download/v${UNOSERVER_REST_API_VERSION}/s6-overlay-module.tar.zx.sha256 /tmp
-# RUN cd /tmp && sha256sum -c *.sha256 && \
-#     tar -C / -Jxpf /tmp/s6-overlay-module.tar.zx && \
-#     rm -rf /tmp/*.tar*
-# EXPOSE 2004
-
+ARG UNOSERVER_REST_API_VERSION=v0.6.1
+ADD https://github.com/libreoffice-docker/unoserver-rest-api/releases/download/v${UNOSERVER_REST_API_VERSION}/s6-overlay-module.tar.zx /tmp
+ADD https://github.com/libreoffice-docker/unoserver-rest-api/releases/download/v${UNOSERVER_REST_API_VERSION}/s6-overlay-module.tar.zx.sha256 /tmp
+RUN cd /tmp && sha256sum -c *.sha256 && \
+     tar -C / -Jxpf /tmp/s6-overlay-module.tar.zx && \
+     rm -rf /tmp/*.tar*
+EXPOSE 2004
 
 # RootFS
 ADD rootfs /
